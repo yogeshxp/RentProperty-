@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="propertyDB" Class="LandLordClassesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-T8U33KC\SQLEXPRESS;Initial Catalog=propertyDB;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="propertyDBConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.spRegister" Method="spRegister">
+    <Parameter Name="FullName" Parameter="fullName" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="MobileNumber" Parameter="mobileNumber" Type="System.Int64" DbType="BigInt" />
+    <Parameter Name="Place" Parameter="place" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="ProfileImage" Parameter="profileImage" Type="System.String" DbType="VarChar(255)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.[_propertyinfo]" Method="_propertyinfo">
+    <Parameter Name="PropertyImage" Parameter="propertyImage" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="PropertyName" Parameter="propertyName" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="SquareFts" Parameter="squareFts" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RentCost" Parameter="rentCost" Type="System.Int32" DbType="Int" />
+    <Parameter Name="City" Parameter="city" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Location" Parameter="location" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="Type" Parameter="type" Type="System.Double" DbType="Float" />
+    <Parameter Name="LandLordName" Parameter="landLordName" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="LandLordImage" Parameter="landLordImage" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="UserId" Parameter="userId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.[_getallProperty]" Method="_getallProperty">
+    <ElementType Name="_getallPropertyResult">
+      <Column Name="PropertyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PropertyImage" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="PropertyName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="SquareFts" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RentCost" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Location" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="LandLordName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LandLordImage" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.[_deleteProperty]" Method="_deleteProperty">
+    <Parameter Name="PropertyId" Parameter="propertyId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.[_updateProperty]" Method="_updateProperty">
+    <Parameter Name="PropertyId" Parameter="propertyId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="PropertyImage" Parameter="propertyImage" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="PropertyName" Parameter="propertyName" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="SquareFts" Parameter="squareFts" Type="System.Int32" DbType="Int" />
+    <Parameter Name="RentCost" Parameter="rentCost" Type="System.Int32" DbType="Int" />
+    <Parameter Name="City" Parameter="city" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="Location" Parameter="location" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="Type" Parameter="type" Type="System.Double" DbType="Float" />
+    <Parameter Name="LandLordName" Parameter="landLordName" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="output" Type="System.Int64" DbType="BigInt" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.[_getOtherUserProperty]" Method="_getOtherUserProperty">
+    <Parameter Name="UserId" Parameter="userId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="_getOtherUserPropertyResult">
+      <Column Name="PropertyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PropertyImage" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="PropertyName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="SquareFts" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RentCost" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Location" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="LandLordName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LandLordImage" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spLogIn" Method="spLogIn">
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="Password" Parameter="password" Type="System.String" DbType="VarChar(100)" />
+    <ElementType Name="spLogInResult">
+      <Column Name="FullName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.[_getPropertybyid]" Method="_getPropertybyid">
+    <Parameter Name="PropertyId" Parameter="propertyId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="_getPropertybyidResult">
+      <Column Name="PropertyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PropertyImage" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="PropertyName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="SquareFts" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RentCost" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Location" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="LandLordName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LandLordImage" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.[_requestSp]" Method="_requestSp">
+    <Parameter Name="PropertyId" Parameter="propertyId" Type="System.Int32" DbType="Int" />
+    <Parameter Name="UserId" Parameter="userId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.[_spGetRequest]" Method="_spGetRequest">
+    <Parameter Name="PropertyId" Parameter="propertyId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="_spGetRequestResult">
+      <Column Name="FullName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="MobileNumber" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="place" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>
