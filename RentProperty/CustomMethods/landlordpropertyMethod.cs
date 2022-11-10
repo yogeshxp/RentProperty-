@@ -32,12 +32,12 @@ namespace RentProperty.CustomMethods
         }
 
 
-        public List<PropertyDataModel> GetallData()
+        public List<PropertyDataModel> GetallData(int UserId)
         {
             List<PropertyDataModel> data = new List<PropertyDataModel>();
             try
             {
-                var l = context._getallProperty().ToList();
+                var l = context._getallProperty(UserId).ToList();
                 if(l.Count() > 0)
                 {
                     data = l.AsEnumerable().Select(x => new PropertyDataModel

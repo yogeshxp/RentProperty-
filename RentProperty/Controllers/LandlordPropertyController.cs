@@ -8,6 +8,7 @@ using System.Net;
 using System.Net.Http;
 using System.Security;
 using System.Web.Http;
+using System.Web.UI;
 
 namespace RentProperty.Controllers
 {
@@ -47,14 +48,14 @@ namespace RentProperty.Controllers
 
         [HttpGet]
         [Route("api/getall")]
-        public HttpResponseMessage GetallData()
+        public HttpResponseMessage GetallData(int UserId)
         {
             HttpResponseMessage httpResponseMessage = new HttpResponseMessage();
             Response<List<PropertyDataModel>> response = new Response<List<PropertyDataModel>>();
             try
             {
                 response.Status = true;
-                response.Data = dataMethod.GetallData();
+                response.Data = dataMethod.GetallData(UserId);
                 response.Message = "Displaying all records";
             }
             catch (Exception)

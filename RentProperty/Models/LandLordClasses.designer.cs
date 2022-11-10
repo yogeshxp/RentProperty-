@@ -76,13 +76,6 @@ namespace RentProperty.Models
 			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.[_getallProperty]")]
-		public ISingleResult<_getallPropertyResult> _getallProperty()
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
-			return ((ISingleResult<_getallPropertyResult>)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.[_deleteProperty]")]
 		public int _deleteProperty([global::System.Data.Linq.Mapping.ParameterAttribute(Name="PropertyId", DbType="Int")] System.Nullable<int> propertyId)
 		{
@@ -132,211 +125,26 @@ namespace RentProperty.Models
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), propertyId);
 			return ((ISingleResult<_spGetRequestResult>)(result.ReturnValue));
 		}
-	}
-	
-	public partial class _getallPropertyResult
-	{
 		
-		private int _PropertyId;
-		
-		private string _PropertyImage;
-		
-		private string _PropertyName;
-		
-		private int _SquareFts;
-		
-		private int _RentCost;
-		
-		private string _City;
-		
-		private string _Location;
-		
-		private double _Type;
-		
-		private string _LandLordName;
-		
-		private string _LandLordImage;
-		
-		private int _UserId;
-		
-		public _getallPropertyResult()
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.[_getallProperty]")]
+		public ISingleResult<_getallPropertyResult> _getallProperty([global::System.Data.Linq.Mapping.ParameterAttribute(Name="UserId", DbType="Int")] System.Nullable<int> userId)
 		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), userId);
+			return ((ISingleResult<_getallPropertyResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PropertyId", DbType="Int NOT NULL")]
-		public int PropertyId
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.[_deleteRequest]")]
+		public int _deleteRequest([global::System.Data.Linq.Mapping.ParameterAttribute(Name="RequestId", DbType="Int")] System.Nullable<int> requestId)
 		{
-			get
-			{
-				return this._PropertyId;
-			}
-			set
-			{
-				if ((this._PropertyId != value))
-				{
-					this._PropertyId = value;
-				}
-			}
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), requestId);
+			return ((int)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PropertyImage", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
-		public string PropertyImage
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="dbo.[_spgetallrequest]")]
+		public ISingleResult<_spgetallrequestResult> _spgetallrequest()
 		{
-			get
-			{
-				return this._PropertyImage;
-			}
-			set
-			{
-				if ((this._PropertyImage != value))
-				{
-					this._PropertyImage = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PropertyName", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
-		public string PropertyName
-		{
-			get
-			{
-				return this._PropertyName;
-			}
-			set
-			{
-				if ((this._PropertyName != value))
-				{
-					this._PropertyName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SquareFts", DbType="Int NOT NULL")]
-		public int SquareFts
-		{
-			get
-			{
-				return this._SquareFts;
-			}
-			set
-			{
-				if ((this._SquareFts != value))
-				{
-					this._SquareFts = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RentCost", DbType="Int NOT NULL")]
-		public int RentCost
-		{
-			get
-			{
-				return this._RentCost;
-			}
-			set
-			{
-				if ((this._RentCost != value))
-				{
-					this._RentCost = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_City", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string City
-		{
-			get
-			{
-				return this._City;
-			}
-			set
-			{
-				if ((this._City != value))
-				{
-					this._City = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Location", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
-		public string Location
-		{
-			get
-			{
-				return this._Location;
-			}
-			set
-			{
-				if ((this._Location != value))
-				{
-					this._Location = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="Float NOT NULL")]
-		public double Type
-		{
-			get
-			{
-				return this._Type;
-			}
-			set
-			{
-				if ((this._Type != value))
-				{
-					this._Type = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LandLordName", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
-		public string LandLordName
-		{
-			get
-			{
-				return this._LandLordName;
-			}
-			set
-			{
-				if ((this._LandLordName != value))
-				{
-					this._LandLordName = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LandLordImage", DbType="VarChar(200)")]
-		public string LandLordImage
-		{
-			get
-			{
-				return this._LandLordImage;
-			}
-			set
-			{
-				if ((this._LandLordImage != value))
-				{
-					this._LandLordImage = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="Int NOT NULL")]
-		public int UserId
-		{
-			get
-			{
-				return this._UserId;
-			}
-			set
-			{
-				if ((this._UserId != value))
-				{
-					this._UserId = value;
-				}
-			}
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())));
+			return ((ISingleResult<_spgetallrequestResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -907,6 +715,274 @@ namespace RentProperty.Models
 				if ((this._place != value))
 				{
 					this._place = value;
+				}
+			}
+		}
+	}
+	
+	public partial class _getallPropertyResult
+	{
+		
+		private int _PropertyId;
+		
+		private string _PropertyImage;
+		
+		private string _PropertyName;
+		
+		private int _SquareFts;
+		
+		private int _RentCost;
+		
+		private string _City;
+		
+		private string _Location;
+		
+		private double _Type;
+		
+		private string _LandLordName;
+		
+		private string _LandLordImage;
+		
+		private int _UserId;
+		
+		public _getallPropertyResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PropertyId", DbType="Int NOT NULL")]
+		public int PropertyId
+		{
+			get
+			{
+				return this._PropertyId;
+			}
+			set
+			{
+				if ((this._PropertyId != value))
+				{
+					this._PropertyId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PropertyImage", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string PropertyImage
+		{
+			get
+			{
+				return this._PropertyImage;
+			}
+			set
+			{
+				if ((this._PropertyImage != value))
+				{
+					this._PropertyImage = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PropertyName", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string PropertyName
+		{
+			get
+			{
+				return this._PropertyName;
+			}
+			set
+			{
+				if ((this._PropertyName != value))
+				{
+					this._PropertyName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SquareFts", DbType="Int NOT NULL")]
+		public int SquareFts
+		{
+			get
+			{
+				return this._SquareFts;
+			}
+			set
+			{
+				if ((this._SquareFts != value))
+				{
+					this._SquareFts = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RentCost", DbType="Int NOT NULL")]
+		public int RentCost
+		{
+			get
+			{
+				return this._RentCost;
+			}
+			set
+			{
+				if ((this._RentCost != value))
+				{
+					this._RentCost = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_City", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string City
+		{
+			get
+			{
+				return this._City;
+			}
+			set
+			{
+				if ((this._City != value))
+				{
+					this._City = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Location", DbType="VarChar(200) NOT NULL", CanBeNull=false)]
+		public string Location
+		{
+			get
+			{
+				return this._Location;
+			}
+			set
+			{
+				if ((this._Location != value))
+				{
+					this._Location = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Type", DbType="Float NOT NULL")]
+		public double Type
+		{
+			get
+			{
+				return this._Type;
+			}
+			set
+			{
+				if ((this._Type != value))
+				{
+					this._Type = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LandLordName", DbType="VarChar(100) NOT NULL", CanBeNull=false)]
+		public string LandLordName
+		{
+			get
+			{
+				return this._LandLordName;
+			}
+			set
+			{
+				if ((this._LandLordName != value))
+				{
+					this._LandLordName = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_LandLordImage", DbType="VarChar(200)")]
+		public string LandLordImage
+		{
+			get
+			{
+				return this._LandLordImage;
+			}
+			set
+			{
+				if ((this._LandLordImage != value))
+				{
+					this._LandLordImage = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="Int NOT NULL")]
+		public int UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this._UserId = value;
+				}
+			}
+		}
+	}
+	
+	public partial class _spgetallrequestResult
+	{
+		
+		private int _RequestId;
+		
+		private int _UserId;
+		
+		private int _PropertyId;
+		
+		public _spgetallrequestResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_RequestId", DbType="Int NOT NULL")]
+		public int RequestId
+		{
+			get
+			{
+				return this._RequestId;
+			}
+			set
+			{
+				if ((this._RequestId != value))
+				{
+					this._RequestId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", DbType="Int NOT NULL")]
+		public int UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this._UserId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PropertyId", DbType="Int NOT NULL")]
+		public int PropertyId
+		{
+			get
+			{
+				return this._PropertyId;
+			}
+			set
+			{
+				if ((this._PropertyId != value))
+				{
+					this._PropertyId = value;
 				}
 			}
 		}

@@ -7,6 +7,7 @@ namespace RentProperty.CustomModel
 {
     public class RequestModel
     {
+        public int RequestId { get; set; }
         public int UserId { get; set; }
 
         public int PropertyId { get; set; }

@@ -22,21 +22,6 @@
     <Parameter Name="UserId" Parameter="userId" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="dbo.[_getallProperty]" Method="_getallProperty">
-    <ElementType Name="_getallPropertyResult">
-      <Column Name="PropertyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="PropertyImage" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="PropertyName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="SquareFts" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="RentCost" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="City" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Location" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
-      <Column Name="Type" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
-      <Column Name="LandLordName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
-      <Column Name="LandLordImage" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
-      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
   <Function Name="dbo.[_deleteProperty]" Method="_deleteProperty">
     <Parameter Name="PropertyId" Parameter="propertyId" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
@@ -108,6 +93,33 @@
       <Column Name="Email" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="MobileNumber" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
       <Column Name="place" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.[_getallProperty]" Method="_getallProperty">
+    <Parameter Name="UserId" Parameter="userId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="_getallPropertyResult">
+      <Column Name="PropertyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PropertyImage" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="PropertyName" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="SquareFts" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RentCost" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="City" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Location" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="LandLordName" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="LandLordImage" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.[_deleteRequest]" Method="_deleteRequest">
+    <Parameter Name="RequestId" Parameter="requestId" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.[_spgetallrequest]" Method="_spgetallrequest">
+    <ElementType Name="_spgetallrequestResult">
+      <Column Name="RequestId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PropertyId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
 </Database>

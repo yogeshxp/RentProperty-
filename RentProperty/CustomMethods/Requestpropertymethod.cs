@@ -56,7 +56,49 @@ namespace RentProperty.CustomMethods
             return data;
         }
 
+
+        public List<RequestModel> GetallRequest()
+        {
+            List<RequestModel> data = new List<RequestModel>();
+            try
+            {
+                var l = Context._spgetallrequest().ToList();
+                if (l.Count() > 0)
+                {
+                    data = l.AsEnumerable().Select(x => new RequestModel
+                    {
+                        RequestId = x.RequestId
+
+                    }).ToList();
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return data;
+        }
+
+        public bool DeleteRequest(int RequestId)
+        {
+            try
+            {
+                Context._deleteRequest(RequestId);
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return true;
+        }
+
     }
 
-    
+
+
 }
